@@ -1,0 +1,16 @@
+install:
+	pip install -r requirements.txt
+
+test:
+	pytest --doctest-modules
+	python -m doctest main.py
+
+lint:
+	flake8 main.py
+
+check-security:
+	pip install safety
+	safety check
+
+run:
+	python main.py
